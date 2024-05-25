@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>LaunchSUV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center">
+                <img src="{{ url_for('static', filename='assets/monlo.png') }}"  alt="Logo" class="h-8 w-8 mr-2">
+                
+                LaunchSUV
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-gray-900">Features</a>
+                <a href="#demo" class="text-gray-700 hover:text-gray-900">Demo</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-gray-900">Testimonials</a>
+                <a href="#pricing" class="text-gray-700 hover:text-gray-900">Pricing</a>
+                <a href="#get-started" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600">Get Started</a>
+            </div>
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#features" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Features</a>
+            <a href="#demo" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Demo</a>
+            <a href="#testimonials" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Testimonials</a>
+            <a href="#pricing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pricing</a>
+            
+        </div>
+    </nav>
+
+    <header class="text-center py-10 bg-white shadow flex flex-col md:flex-row items-center my-6">
+        <div class="">
+            <h1 class="text-4xl font-bold">Launch your solution as fast as possible</h1>
+        <p class="mt-4 text-xl">The Boilerplate with all the necessary features a Kenyan developer needs
+            to launch their solution
+        </p>
+        <a href="#get-started" class="mt-6 inline-block bg-blue-500 text-white font-bold py-2 px-4 w-40 rounded hover:bg-blue-600">Get Started</a>
+        <p class="text-xl text-green-600 my-4">425 Kenyan devs will now be launching projects faster for the rest of their lives</p>
+        
+
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0">
+    
+            <img src="{{ url_for('static', filename='assets/launch.png') }}"  alt="Launch Image" class="rounded shadow">
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <section id="get-started" class="my-8 bg-white p-6 shadow rounded text-center">
+            <h2 class="text-3xl font-semibold text-center">To Get Started</h2>
+            <ol class="list-decimal list-inside space-y-2 text-center">
+                <li class="py-3">Request Access</li>
+                <li class="py-3">Remember to specify your tech stack</li>
+                <li class="py-3">Get Access</li>
+                <li class="py-3">git clone <your-chosen-tech-stack>launchsuv</li>
+            
+            </ol>
+        </section>
+
+        <!-- Features section -->
+        <section id="features" class="my-10">
+            <h2 class="text-3xl font-semibold text-center mb-6">Key Features</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-xl font-bold mb-2">Front-Wheels</h3>
+                    <div class="flex items-center mb-4">
+                        <img src="{{ url_for('static', filename='assets/land.png') }}"  alt="Landing Page" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">Landing Page</h4>
+                            <p>A conversion optimised landing page</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        
+                        <img src="{{ url_for('static', filename='assets/mpesa.png') }}"  alt="Mpesa STK Push" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">Mpesa STK Push</h4>
+                            <p>Collect Payments with Mpesa STK Push already Integrated</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        
+                        <img src="{{ url_for('static', filename='assets/docu.jpeg') }}"  alt="Good Documentation" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">Good Documentation</h4>
+                            <p>Detailed and developer friendly documentation and a ton of readme.mds for a good developer experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-xl font-bold mb-2">Back-Wheels</h3>
+                    <div class="flex items-center mb-4">
+                       
+                        <img src="{{ url_for('static', filename='assets/mongo.png') }}" alt="MongoDB Database" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">MongoDB Database</h4>
+                            <p>MongoDB database to store mpesa transactions & data</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                       
+                        <img  src="{{ url_for('static', filename='assets/auth.jpeg') }}"  alt="User Auth& Onboarding" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">User Auth& Onboarding</h4>
+                            <p>Authenticate your users Choose between Google Sign In and the normal user signup and login formats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-xl font-bold mb-2">Spare-Wheels</h3>
+                    <div class="flex items-center mb-4">
+                      
+                        <img  src="{{ url_for('static', filename='assets/mysql.jpeg') }}"  alt="MySQL Database" class="h-10 w-10 mr-3">
+                        <div>
+                            <h4 class="text-lg font-bold">MySQL Database</h4>
+                            <p>Use MySQL database to store Mpesa transactions & data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Developer notes-->
+        <section id="developer" class="my-10">
+            <h2 class="text-3xl font-semibold text-center mb-6">Hello I am Jesse Nehemiah</h2>
+            <p class="py-2">
+                Throughout my years,I have always fantasized about being the next Larry page. After finishing high school,
+                I had  a bucket load of ideas about apps and soft-wares that I wanted to build and get rich.I built only a tiny fraction
+                of them ,spent more time than I expected and still got 0 users,some even left unfinished,some succeeded.
+            </p>
+            <p class="py-2">
+                I even tried to built a startup that was to have Kenyan banks as the customer.
+                A few years after my burnout, I restarted the journey differently after learning: 
+
+            </p>
+            <ul class="list-disc list-inside pl-5 space-y-2 mb-6">
+              <li>I realized that no need  to start from scratch, millions of templates already existed.</li>
+              <li>After building, the real work begins, marketing and getting somebody to give you their hard-earned money.</li>
+              <li>A good landing page shows professionality , builds trust for B2B and is a faster form of distribution</li>
+              <li>Collecting payments is key for any developer out there.</li>
+              <li>Free-trials kill projects and only work for VC-Backed companies or large upfront investment, 
+              Only 3 out of 100 visitors buy your product!!</li>
+              <li>Waitlist ++ landing pages are gold time savers.</li>
+            </ul>
+            <p class="text-2xl mb-6">I built LaunchSUV for many reasons but the key ones are:</p>
+
+            <ul  class="list-disc list-inside pl-5 space-y-2">
+                <li>Save time and focus on what matters: building and promoting your business</li>
+                
+                <li>Get profitable fast—the more you ship, the more you learn, the more you earn</li>
+
+            </ul>
+
+
+        </section>
+        <!--Demonstration Video section-->
+        <section id="demo" class="my-10">
+
+        </section>
+        <!--Testimonials-->
+        <section id="testimonials" class="my-10">
+            <h2 class="text-2xl font-semibold text-center mb-6">LaunchSUV has been trusted by Kenyans
+                since we launched on 23RD MAY
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-4xl text-green-600 font-bold mb-2">210 +</h3>
+                    <p>215 react js developers have acquired this SUV.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-4xl text-green-600  font-bold mb-2">125</h3>
+                    <p>PhP devs.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded">
+                    <h3 class="text-4xl text-green-600 font-bold mb-2">90+</h3>
+                    <p>Flask developers.</p>
+                </div>
+            </div>
+        </section>
+        <!-- End of new section -->
+        <section id="pricing" class="my-10">
+            <h2 class="text-3xl font-semibold text-center mb-6">Pricing</h2>
+            <p class="text-2xl bg-white py-4 p-6 text-center">
+                Save hours of repeatitive code,ship fast and get profitable
+
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 shadow rounded text-center">
+                    <h3 class="text-xl font-bold mb-2">Mini SUV</h3>
+                    <p class="text-green-600 font-semibold text-2xl mb-2">Ksh. 1200/Buy Once</p>
+                    <p>Front-Wheels</p>
+                    <p>Back-Wheels</p>
+                    <p>Great Documentation</p>
+                    <a class="mb-2 text-2xl text-green-600 font-semibold" href="https://forms.gle/R21R4Hs25BSLQHQcA">
+                        Get Access</a>
+                </div>
+                <div class="bg-white p-6 shadow rounded text-center mx-auto">
+                    <h3 class="text-xl font-bold mb-2">Medium SUV</h3>
+                    <p class="text-green-600 font-semibold text-2xl mb-2">Ksh 2500/Buy Once</p>
+                    <p>Front-Wheels</p>
+                    <p>Back-Wheels</p>
+                    <p>Spare-Wheels</p>
+                    <p>Great Documentation</p>
+                    <a class="mb-4 text-2xl text-green-600 font-semibold" href="https://forms.gle/R21R4Hs25BSLQHQcA">
+                        Get Access</a>
+                </div>
+                <div class="bg-white p-6 shadow rounded text-center mx-auto">
+                    <h3 class="text-xl font-bold mb-2">Full SUV</h3>
+                    <p class="text-green-600 font-semibold text-2xl mb-2">Ksh 4000/month</p>
+                    <p>Front-Wheels</p>
+                    <p>Back-Wheels</p>
+                    <p>Spare-Wheels</p>
+                    <p>Great Documentation</p>
+                    <p>Lifetime Updates</p>
+                    <p>Available Support</p>
+
+                    <a class="mb-4 text-2xl text-green-600 font-semibold" href="https://forms.gle/R21R4Hs25BSLQHQcA">
+                        Get Access</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 shadow rounded">
+                <h3 class="text-3xl font-bold mb-2">Not Interested in any of the above</h3>
+                <p class="py-4 text-2xl">Request your specific package using this link.</p>
+                <a class="text-2xl text-green-600" href="https://forms.gle/R21R4Hs25BSLQHQcA">Specify Here</a>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section id="faq" class="my-10">
+            <h2 class="text-3xl font-semibold text-center mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 shadow rounded">
+                    <div class="flex">
+
+                        <p class="w-full text-left font-bold text-lg focus:outline-none">
+                            What is LaunchSUV?
+
+                        </p>
+                        <button  onclick="toggleFaq('faq1')">Click</button>
+
+                    </div>
+
+                    <div id="faq1" class="hidden mt-2">
+                        <p>LaunchSUV is a platform that helps you launch your solution as fast as possible, providing you with tools and features to streamline your development process.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 shadow rounded">
+                    <div class="flex">
+                        <p class="w-full text-left font-bold text-lg focus:outline-none">
+                            Can I upgrade my plan later?
+                        </p>
+                        <button class="" onclick="toggleFaq('faq3')">Click</button>
+                    </div>
+
+                    <div id="faq3" class="hidden mt-2">
+                        <p>Yes, you can upgrade your plan at any time to access more features and capabilities as your project grows.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-5 py-4 text-xl">
+                Got any more questions reach out via this 
+                <a class="text-green-600" href="https://forms.gle/R21R4Hs25BSLQHQcA">Contact Form</a>
+            </p>
+        </section>
+        <!-- End of FAQ Section -->
+
+        <section class="my-10">
+            <h2 class="text-3xl font-semibold text-center mb-6">Coming soon</h2>
+            <div class="text-center">
+                <p class="text-2xl text-green-600">New features like email automation and tools are on the way. Stay tuned!</p>
+            </div>
+        </section>
+        <footer class="text-center py-6 bg-gray-800 text-white">
+            <p>© 2024 LaunchSUV. All rights reserved.</p>
+        </footer>
+ 
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        function toggleFaq(id) {
+            const faq = document.getElementById(id);
+            faq.classList.toggle('hidden');
+        }
+
+    </script>
+</body>
+</html>

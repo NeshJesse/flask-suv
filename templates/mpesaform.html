@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            clip-path: circle(30% at right 70%);
+        }
+        .shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+        }
+        .shape:first-child {
+            top: 20%;
+            left: 10%;
+        }
+        .shape:last-child {
+            top: 80%;
+            left: 80%;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="background"></div>
+    <div id="response" class="fixed top-0 right-0 mt-4 mr-4 bg-white p-4 rounded-lg shadow-md"></div>
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md relative z-10">
+        <h3 class="text-2xl font-semibold text-center mb-6">Payment Form</h3>
+        <form id="paymentForm" action="" method="post">
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="254" required>
+            </div>
+            <div class="mb-4">
+                <label for="amount" class="block text-gray-700 font-medium mb-2">Amount to Pay:</label>
+                <input type="number" id="amount" name="amount" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" min="500" placeholder="Enter amount (minimum is 500)" required>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Pay With Mpesa</button>
+        </form>
+    </div>
+    
+    <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var phone = document.getElementById("phone").value;
+        var amount = document.getElementById("amount").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/payment", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                document.getElementById("response").innerHTML = "<pre>" + JSON.stringify(response, null, 2) + "</pre>";
+            }
+        };
+        xhr.send("phone=" + phone + "&amount=" + amount);
+    });
+    </script>
+</body>
+</html>
